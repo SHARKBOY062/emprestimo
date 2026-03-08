@@ -1,0 +1,283 @@
+.loan-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.loan-card:hover{
+  transform: translateY(-4px);
+  box-shadow:0 22px 40px rgba(0,0,0,.1);
+}
+
+/* TOP */
+
+.loan-card__top{
+  background:
+  radial-gradient(circle at top right, rgba(227,6,19,.12), transparent 26%),
+  linear-gradient(180deg,#f5fbfd 0%,#e8f0f2 100%);
+
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+  min-height:150px;
+}
+
+/* BADGES */
+
+.loan-card__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  max-width:70%;
+}
+
+.loan-card__tag,
+.loan-card__badge{
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+}
+
+.loan-card__tag{
+  background:rgba(227,6,19,.1);
+  color:var(--primary);
+}
+
+.loan-card__badge{
+  background:rgba(23,163,74,.12);
+  color:var(--whatsapp);
+}
+
+/* ICON */
+
+.loan-card__icon{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#ffffff,#f5f5f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--primary);
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+  flex-shrink:0;
+}
+
+/* BODY */
+
+.loan-card__body{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  padding:24px 20px;
+}
+
+/* highlight */
+
+.loan-card__highlight{
+  display:inline-flex;
+  align-self:flex-start;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f7f8fa;
+  font-size:.75rem;
+  font-weight:700;
+}
+
+/* title */
+
+.loan-card__body h3{
+  margin:0;
+  font-size:clamp(1.25rem,1.5vw,1.55rem);
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+
+/* subtitle */
+
+.loan-card__subtitle{
+  margin:0;
+  font-size:.95rem;
+  color:var(--text-soft);
+  line-height:1.6;
+}
+
+/* LIST */
+
+.loan-card__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.loan-card__list li{
+  position:relative;
+  padding-left:26px;
+  font-size:.92rem;
+  line-height:1.5;
+}
+
+.loan-card__list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  font-weight:900;
+  color:var(--success);
+}
+
+/* NOTE */
+
+.loan-card__note{
+  margin:0;
+  padding:14px;
+  border-radius:14px;
+  background:#fbfbfc;
+  border:1px solid #eef1f4;
+  font-size:.85rem;
+  color:var(--text-soft);
+  line-height:1.6;
+}
+
+/* ACTIONS */
+
+.loan-card__actions{
+  margin-top:auto;
+  display:grid;
+  gap:12px;
+}
+
+/* BUTTON */
+
+.loan-card__button{
+  width:100%;
+  min-height:50px;
+  border-radius:14px;
+  background:linear-gradient(90deg,#e30613,#ca0011);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:.95rem;
+  transition:all .2s ease;
+  box-shadow:0 12px 24px rgba(227,6,19,.18);
+}
+
+.loan-card__button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 28px rgba(227,6,19,.22);
+}
+
+/* LINK */
+
+.loan-card__link{
+  text-align:center;
+  font-weight:700;
+  color:var(--primary);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-size:.9rem;
+}
+
+/* ---------------- */
+/* TABLET */
+/* ---------------- */
+
+@media (max-width:1024px){
+
+.loan-card__top{
+min-height:130px;
+}
+
+.loan-card__icon{
+width:60px;
+height:60px;
+}
+
+}
+
+/* ---------------- */
+/* MOBILE */
+/* ---------------- */
+
+@media (max-width:768px){
+
+.loan-card{
+border-radius:20px;
+}
+
+.loan-card__top{
+padding:16px;
+min-height:auto;
+}
+
+.loan-card__body{
+padding:18px;
+gap:14px;
+}
+
+.loan-card__icon{
+width:54px;
+height:54px;
+border-radius:14px;
+}
+
+.loan-card__body h3{
+font-size:1.25rem;
+}
+
+.loan-card__subtitle{
+font-size:.9rem;
+}
+
+.loan-card__list li{
+font-size:.88rem;
+}
+
+}
+
+/* ---------------- */
+/* MOBILE PEQUENO */
+/* ---------------- */
+
+@media (max-width:420px){
+
+.loan-card__badges{
+max-width:100%;
+}
+
+.loan-card__top{
+flex-direction:column;
+align-items:flex-start;
+gap:12px;
+}
+
+.loan-card__icon{
+align-self:flex-end;
+}
+
+.loan-card__body{
+padding:16px;
+}
+
+.loan-card__button{
+font-size:.9rem;
+}
+
+}
